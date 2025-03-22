@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 6: Función de Transición Extendida</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/full.render.js"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <button>
+            <a href="../index.html" class="sidebar-button">Página Principal</a>
+        </button>
+        <button onclick="toggleDropdown('parcial1', this)">Primer Parcial <span class="arrow">▶</span></button>
+        <div class="dropdown-content" id="parcial1" style="display: block !important;">
+            <a href="../pages/tema1.html">Tema 1: Modelo Discreto</a>
+            <a href="../pages/tema2.html">Tema 2: Autómata Finito Determinista (AFD)</a>
+            <a href="../pages/tema3.html">Tema 3: Definición Formal</a>
+            <a href="../pages/tema4.html">Tema 4: Tabla de Transiciones</a>
+            <a href="../pages/tema5.html">Tema 5: Función de Transición</a>
+            <a href="../pages/tema6.html">Tema 6: Función de Transición Extendida</a>
+        </div>
+        <button onclick="toggleDropdown('parcial2', this)">
+            Segundo Parcial <span class="arrow">▶</span>
+          </button>
+          <div class="dropdown-content" id="parcial2">
+            <a href="tema7.html">Tema 7: Autómata No Determinista (AFND)</a>
+            <a href="tema8.html">Tema 8: AFND con Transiciones Vacías</a>
+            <a href="tema9.html">Tema 9: Cálculo de Clausura</a>
+            <a href="tema10.html">Tema 10: Búsqueda de Patrones de Texto (web,ebay) y conversion de AFND a AFD</a>
+          </div>
+        <button onclick="toggleDropdown('parcial3', this)">Tercer Parcial <span class="arrow">▶</span></button>
+        <div class="dropdown-content" id="parcial3">
+            <a href="#">Tema 1</a>
+            <a href="#">Tema 2</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header">
+            <h1>Tema 6: Función de Transición Extendida</h1>
+        </div>
+        <section class="text-container">
+            <h2>Concepto</h2>
+            <p>La función de transición extendida permite determinar el estado final de un autómata después de procesar una cadena completa.</p>
+        </section>
+        <section class="text-container">
+            <h2>Notación</h2>
+            <p>Se representa como δ*: Q × Σ* → Q, donde:</p>
+            <ul>
+                <li>Q es el conjunto de estados.</li>
+                <li>Σ* es el conjunto de todas las cadenas posibles sobre el alfabeto.</li>
+                <li>δ* es la función que aplica repetitivamente la función de transición estándar.</li>
+            </ul>
+        </section>
+        <section class="text-container">
+            <h2>Ejemplo de Función de Transición Extendida</h2>
+            <p>Tomaremos como ejemplo el AFD anterior en el que la palabra tuviera un numero impar de a's y se aplicara la función de transición extendida</p>
+        </section>
+        <div id="diagramImparAs"></div>
+        <section class="math-container">
+            <h3>Función de Transición Extendida (δ\*)</h3>
+            <p>\[
+            \delta^*(q, \epsilon) = q \\
+            \delta^*(q, xa) = \delta(\delta^*(q, x), a)
+            \]</p><br>
+            <h3>Explicación</h3>
+            <p class="text-container">\[\delta^*(q, \epsilon) = q\] Se explica que si la cadena es vacía (ε), el autómata permanece en el estado actual q.</p>
+            <p class="text-container">\[\delta^*(q, xa) = \delta(\delta^*(q, x), a)\] Si la cadena es xa (donde x es un prefijo y a el último símbolo), primero se procesa x y luego se aplica la transición con a.</p><br>
+        </section>
+        <section class="math-container">
+            <h3>Ejemplo de Aplicación de δ\* con la palabra "aaba"</h3>
+            <p>\[
+            \begin{align*}
+            \delta^*(q_0, aaba) &= \delta(\delta^*(q_0, aab), a) \\
+            &= \delta(\delta(\delta^*(q_0, aa), b), a) \\
+            &= \delta(\delta(\delta(\delta^*(q_0, a), a), b), a) \\
+            &= \delta(\delta(\delta(q_1, a), b), a) \\
+            &= \delta(\delta(q_0, b), a) \\
+            &= \delta(q_0, a) \\
+            &= q_1
+            \end{align*}
+            \]</p>
+            <p><strong>Resultado Final:</strong> q₁ (Estado de aceptación)</p>
+        </section>
+    </div>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

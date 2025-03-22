@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 8: AFND con Transiciones Vacías</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/full.render.js"></script>
+    <script
+      type="text/javascript"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <button>
+        <a href="../index.html" class="sidebar-button">Página Principal</a>
+      </button>
+
+      <button onclick="toggleDropdown('parcial1', this)">
+        Primer Parcial <span class="arrow">▶</span>
+      </button>
+      <div class="dropdown-content" id="parcial1">
+        <a href="tema1.html">Tema 1: Modelo Discreto</a>
+        <a href="tema2.html">Tema 2: Autómata Finito Determinista (AFD)</a>
+        <a href="tema3.html">Tema 3: Definición Formal</a>
+        <a href="tema4.html">Tema 4: Tabla de Transiciones</a>
+        <a href="tema5.html">Tema 5: Función de Transición</a>
+        <a href="tema6.html">Tema 6: Función de Transición Extendida</a>
+      </div>
+
+      <button onclick="toggleDropdown('parcial2', this)">
+        Segundo Parcial <span class="arrow">▶</span>
+      </button>
+      <div class="dropdown-content" id="parcial2">
+        <a href="tema7.html">Tema 7: Autómata No Determinista (AFND)</a>
+        <a href="tema8.html">Tema 8: AFND con Transiciones Vacías</a>
+        <a href="tema9.html">Tema 9: Cálculo de Clausura</a>
+        <a href="tema10.html">Tema 10: Búsqueda de Patrones de Texto (web,ebay) y conversion de AFND a AFD</a>
+      </div>
+
+      <button onclick="toggleDropdown('parcial3', this)">
+        Tercer Parcial <span class="arrow">▶</span>
+      </button>
+      <div class="dropdown-content" id="parcial3">
+        <a href="#">Tema 1</a>
+        <a href="#">Tema 2</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="header">
+        <h1>Tema 8: AFND con Transiciones Vacías</h1>
+      </div>
+      <section>
+        <h2>Concepto de Transiciones Vacías</h2>
+        <p class="text-container">
+          Las transiciones vacías, representadas por el símbolo ε, permiten que un
+          autómata pase de un estado a otro sin consumir ningún símbolo de entrada.
+        </p>
+      </section>
+      <section>
+        <h2>Ejemplo de Diagrama</h2>
+        <p class="text-container">
+          A continuación se muestra un ejemplo de un autómata con transiciones vacías que genere palabras que contengan un par de ceros o contengan exactamente 2 unos con 6 estados.
+        </p>
+        <div id="diagramEmptyTrans" style="margin-top: 20px;"></div>
+      </section>
+    </div>
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>

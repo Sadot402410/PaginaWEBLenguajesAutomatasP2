@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 9: Cálculo de Clausura</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/full.render.js"></script>
+    <script
+      type="text/javascript"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <button>
+        <a href="../index.html" class="sidebar-button">Página Principal</a>
+      </button>
+
+      <button onclick="toggleDropdown('parcial1', this)">
+        Primer Parcial <span class="arrow">▶</span>
+      </button>
+      <div class="dropdown-content" id="parcial1">
+        <a href="tema1.html">Tema 1: Modelo Discreto</a>
+        <a href="tema2.html">Tema 2: Autómata Finito Determinista (AFD)</a>
+        <a href="tema3.html">Tema 3: Definición Formal</a>
+        <a href="tema4.html">Tema 4: Tabla de Transiciones</a>
+        <a href="tema5.html">Tema 5: Función de Transición</a>
+        <a href="tema6.html">Tema 6: Función de Transición Extendida</a>
+      </div>
+
+      <button onclick="toggleDropdown('parcial2', this)">
+        Segundo Parcial <span class="arrow">▶</span>
+      </button>
+      <div class="dropdown-content" id="parcial2">
+        <a href="tema7.html">Tema 7: Autómata No Determinista (AFND)</a>
+        <a href="tema8.html">Tema 8: AFND con Transiciones Vacías</a>
+        <a href="tema9.html">Tema 9: Cálculo de Clausura</a>
+        <a href="tema10.html">Tema 10: Búsqueda de Patrones de Texto (web,ebay) y conversion de AFND a AFD</a>
+      </div>
+
+      <button onclick="toggleDropdown('parcial3', this)">
+        Tercer Parcial <span class="arrow">▶</span>
+      </button>
+      <div class="dropdown-content" id="parcial3">
+        <a href="#">Tema 1</a>
+        <a href="#">Tema 2</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="header">
+        <h1>Tema 9: Cálculo de Clausura</h1>
+      </div>
+      <section class="text-container">
+        <h2>Definición de Clausura</h2>
+        <p>
+          La clausura-ε de un estado q, denotada como ε-Closure(q), es el conjunto de todos los estados a los que se puede llegar desde q usando únicamente transiciones vacías (ε).
+        </p>
+      </section>
+      <section class="text-container">
+        <h2>Ejemplo de Cálculo de Clausura</h2>
+        <p>
+          Tomando como ejemplo el automata anterior, se detallan las clausuras para cada estado de este
+        </p>
+        <div style="text-align: center; max-width: 550px;">
+          <ul>
+            <li><strong>ε-Closure(q0):</strong>
+                <ul>
+                    <li>Desde q0, hay transiciones ε hacia q1 y q3.</li>
+                    <li>Resultado: {q0, q1, q3}</li>
+                </ul>
+            </li><br>
+            <li><strong>ε-Closure(q1):</strong>
+                <ul>
+                    <li>No hay transiciones ε desde q1.</li>
+                    <li>Resultado: {q1}</li>
+                </ul>
+            </li><br>
+            <li><strong>ε-Closure(q2):</strong>
+                <ul>
+                    <li>No hay transiciones ε desde q2.</li>
+                    <li>Resultado: {q2}</li>
+                </ul>
+            </li><br>
+            <li><strong>ε-Closure(q3):</strong>
+                <ul>
+                    <li>No hay transiciones ε desde q3.</li>
+                    <li>Resultado: {q3}</li>
+                </ul>
+            </li><br>
+            <li><strong>ε-Closure(q4):</strong>
+                <ul>
+                    <li>No hay transiciones ε desde q4.</li>
+                    <li>Resultado: {q4}</li>
+                </ul>
+            </li><br>
+            <li><strong>ε-Closure(q5):</strong>
+                <ul>
+                    <li>No hay transiciones ε desde q5.</li>
+                    <li>Resultado: {q5}</li>
+                </ul>
+            </li><br>
+        </ul>
+        </div>
+      </section>
+    </div>
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>
