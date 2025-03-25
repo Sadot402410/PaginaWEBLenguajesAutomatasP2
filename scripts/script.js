@@ -78,10 +78,12 @@ function loadDiagramAF() {
         rankdir=LR;
         size="6,4";
         
+        node [shape = point ]; qi;
         node [shape = doublecircle]; q1;  // Estado de aceptación
         node [shape = circle]; q0;
 
         // Transiciones
+        qi -> q0;
         q0 -> q0 [label = "0"];
         q0 -> q1 [label = "1"];
         q1 -> q0 [label = "0"];
@@ -109,16 +111,18 @@ function loadAFD() {
         rankdir=LR;
         size="6,4";
         
+        node [shape = point ]; qi;
         node [shape = doublecircle]; q0;  
         node [shape = circle]; q1;
 
+        qi -> q1;
         q0 -> q1 [label = "0"];
         q0 -> q0 [label = "1"];
         q1 -> q0 [label = "0"];
         q1 -> q1 [label = "1"];
 
-        q0 [label="q0 (Par de ceros)"];
-        q1 [label="q1 (Impar de ceros)"];
+        q0 [label="q0"];
+        q1 [label="q1"];
     }`;
 
   var viz = new Viz();
@@ -140,9 +144,11 @@ function loadParOnesDiagram() {
         rankdir=LR;
         size="6,4";
         
+        node [shape = point ]; qi;
         node [shape = doublecircle]; q0;
         node [shape = circle];
         
+        qi -> q1;
         q0 -> q1 [label = "1"];
         q0 -> q0 [label = "0"];
         
@@ -169,12 +175,14 @@ function loadImparAsDiagram() {
         rankdir=LR;
         size="6,4";
         
+        node [shape = point ]; qi;
         node [shape = doublecircle]; q1;
         node [shape = circle];
 
         q0 [label="q0 (par)"];
         q1 [label="q1 (impar)"];
 
+        qi -> q0;
         q0 -> q1 [label = "a"];
         q0 -> q0 [label = "b"];
 
@@ -202,17 +210,18 @@ function LoadDiagramAFND() {
         rankdir=LR;
         size="6,4"
         
+        node [shape = point ]; qi;
+        node [shape = doublecircle]; q5;
         node [shape = circle];
+
+        qi -> q0;
         q0 -> q1 [label="a"];
-        q0 -> q2 [label="a"];
+        q0 -> q2 [label="b"];
         q1 -> q3 [label="b"];
-        q2 -> q3 [label="b"];
+        q2 -> q3 [label="a"];
         q3 -> q4 [label="a"];
         q4 -> q4 [label="b"];
         q4 -> q5 [label="a"];
-        
-        node [shape = doublecircle];
-        q5;
     }`;
 
   var viz = new Viz();
@@ -268,10 +277,12 @@ function loadDiagramEmptyTrans() {
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".AFNDWebEbay").forEach((div) => {
     var graph = `digraph { rankdir=LR; size="6,4";
+            node [shape = point ]; qi;
             node [shape = circle];
             node [shape = doublecircle]; 4 8;
             node [shape = circle];
 
+            qi -> 1;
             1 -> 1 [label="Σ - {w, e}"];
             1 -> 2 [label="w"];
             2 -> 3 [label="e"];
