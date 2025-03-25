@@ -84,6 +84,20 @@
         </p>
       </section>
       <div id="diagramAFND" style="margin-top: 20px;"></div>
+      <section class="text-container">
+        <p>Este AFND procesa cadenas de los símbolos {a, b} y tiene un estado de aceptación en q5</p>
+        <div class="math-container">
+          <ol>
+            <li>\( q_0 \) puede ir a \( q_1 \) (con \( a \)) o a \( q_2 \) (con \( b \)).</li>
+            <li>Desde \( q_1 \), si recibe \( b \), va a \( q_3 \).</li>
+            <li>Desde \( q_2 \), si recibe \( a \), también va a \( q_3 \).</li>
+            <li>Desde \( q_3 \), necesita \( a \) para ir a \( q_4 \).</li>
+            <li>\( q_4 \) puede recibir varias \( b \) (bucle).</li>
+            <li>Para aceptar la cadena, \( q_4 \) debe recibir \( a \) y llegar a \( q_5 \).</li>
+          </ol>
+        </div>
+        <p>las palabras que se pueden formar con este AFND son: "abaa", "baaa", "abababa", "baabba" por mencionar algunas.</p>
+      </section>
     </div>
     <script src="../scripts/script.js"></script>
   </body>
